@@ -1,0 +1,15 @@
+name: Alerta DevOps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificacion
+        run: |
+          curl -d "Se ha realizado un push a main" https://ntfy.sh/devops-itla
